@@ -1,19 +1,21 @@
 class PortfoliosController < ApplicationController
+  before_action :set_portfolio_item, only: [:edit, :show, :update, :destroy]
   layout 'portfolio'
+  access all: [:show, :index, :angular], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
 
   def index
     @portfolio_items = Portfolio.all
   end
-  
+
   def angular
     @angular_portfolio_items = Portfolio.angular
   end
 
-  def new 
+  def new
     @portfolio_item = Portfolio.new
     3.times { @portfolio_item.technologies.build }
 
-  end  
+  end
 
   def show
     @portfolio_item = Portfolio.find(params[:id])
@@ -34,7 +36,7 @@ class PortfoliosController < ApplicationController
   def edit
     @portfolio_item = Portfolio.find(params[:id])
   end
-  
+
   def update
     @portfolio_item = Portfolio.find(params[:id])
 
@@ -43,7 +45,7 @@ class PortfoliosController < ApplicationController
         format.html { redirect_to portfolios_path, notice: 'Blog was successfully updated.' }
       else
         format.html { render :edit }
-        
+
       end
     end
   end
@@ -61,7 +63,7 @@ class PortfoliosController < ApplicationController
       format.html { redirect_to portfolios_path, notice: 'Post was removed.' }
     end
   end
-  
+
   private
 
   def portfolio_params
@@ -70,6 +72,10 @@ class PortfoliosController < ApplicationController
                                       :body,
                                       technologies_attributes: [:name]
                                      )
+  end
+
+  def set_portfolio_item
+    @portfolio_item = Portfolio.find(params[:id])
   end
 
 end
