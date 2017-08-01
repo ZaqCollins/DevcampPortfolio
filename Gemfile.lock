@@ -57,7 +57,6 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
-    devcamp_view_tool (0.1.0)
     devise (4.3.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -73,6 +72,7 @@ GEM
       activerecord (>= 4.0.0)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
+    holst_copyright_tool (0.1.0)
     i18n (0.8.6)
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
@@ -205,10 +205,10 @@ DEPENDENCIES
   bootstrap (~> 4.0.0.alpha6)
   byebug
   coffee-rails (~> 4.2)
-  devcamp_view_tool (~> 0.1.0)
   devise (~> 4.3)
   font-awesome-rails (~> 4.7, >= 4.7.0.2)
   friendly_id (~> 5.2, >= 5.2.1)
+  holst_copyright_tool (~> 0.1.0)
   jbuilder (~> 2.5)
   jquery-rails (~> 4.3, >= 4.3.1)
   kaminari (~> 1.0, >= 1.0.1)
