@@ -17,7 +17,7 @@ module ApplicationHelper
   end
 
   def copyright_generator
-    DevcampViewTool::Renderer.copyright 'Zachariah Collins', 'All rights reserved'
+    HolstCopyrightTool::Renderer.copyright 'Zachariah Collins', 'All rights reserved'
   end
 
   def nav_items
