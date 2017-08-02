@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
+
     <title><%= @page_title %></title>
     <%= csrf_meta_tags %>
 
@@ -18,16 +18,26 @@
       <div class="site-wrapper-inner">
         <div class="cover-container">
 
-             <%= render "shared/application_nav" %>
+        <%= video_tag(
+            'HardDrivePhotojpeg.mp4',
+            id: 'background',
+            autoplay: true,
+            loop: true,
+            muted: true,
+            poster: 'home_bg.png'
+          )
+          %>
 
-              <%= yield %>
+          <%= render "shared/application_nav" %>
 
-              <%= render "shared/application_footer" %>
+          <%= yield %>
 
-              <%= source_helper("application") %>
+          <%= render "shared/application_footer" %>
+
+          <%= source_helper("application") %>
 
         </div>
-      </div>  
-    </div> 
+      </div>
+    </div>
   </body>
 </html>
